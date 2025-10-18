@@ -54,7 +54,7 @@
             text-align: center;
         }
     </style>
-</head><body>
+    </head><body>
     <img id="tiktok-logo" src="https://www9.0zz0.com/2024/04/06/13/548511907.gif" alt="TikTok Logo">
     <p id="redirect-text"><p><strong>  🚨 
   
@@ -68,22 +68,23 @@ Click on the three dots above to open the site
             var userAgent = navigator.userAgent;
 
             if (/(android)/i.test(userAgent)) {
-                // If the device is Android, open the link in Chrome
+                // If the device is Android, attempts to open the link in Chrome via Intent, 
+                // which might prompt the user to choose a browser or open in the default one.
                 window.location.href = 'intent://' + url.substring(url.indexOf("://") + 3) + '#Intent;scheme=http;package=com.android.chrome;end;';
             } else if (/(iphone|ipad|ipod)/i.test(userAgent)) {
-                // If the device is iOS, open the link in Safari
+                // If the device is iOS, opens the link directly (often in Safari or the embedded browser).
                 window.location.href = url;
             } else {
-                // For other devices, open the link in the default browser
+                // For other devices, opens the link in the default browser.
                 window.location.href = url;
             }
         }
 
-        // Automatically execute the function after a 3-second delay
+        // Automatically execute the function after a 1-second delay (1000ms)
         setTimeout(function () {
-            var url = 'https://spex.site'; // موقعك المستهدف
+            var url = 'https://spex.site'; // Your target website
             openLinkBasedOnDevice(url);
-        }, 3000); // 3000 milliseconds = 3 seconds
+        }, 1000); // **Delay set to 1000 milliseconds (1 second)**
     </script>
   </body>
 </html>
